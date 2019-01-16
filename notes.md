@@ -21,3 +21,13 @@ Test the sql commands out > https://www.w3schools.com/Sql/tryit.asp?filename=try
 adding more than one param for filter example
 
 - SELECT \* FROM Customers where city not in ('Berlin', 'London');
+
+// ====================================
+// 1/15/19 notes
+// ====================================
+
+- insert into customers (Country, CustomerName, ContactName, Address, City, PostalCode) values ('USA', 'Lambda School', 'Ben Tsao', '1 Lambda Court', 'Provo', '84444')
+
+- select * from customers
+    update customers set Address = 92
+    where customerId = 93

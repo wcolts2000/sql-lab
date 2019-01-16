@@ -33,7 +33,7 @@
 
 - UPDATE Customers SET PostalCode = 11122 WHERE ContactName = 'Bilbo Baggins'
 
-## list orders grouped by customer showing the number of orders per customer. _Rattlesnake Canyon Grocery_ should have 7 orders.
+## list orders grouped by customer showing the number of orders per customer. _Rattlesnake Canyon Grocery_ should have 7 orders. 
 
 - SELECT c.CustomerName, COUNT(OrderID)
   FROM Orders AS o
@@ -63,4 +63,9 @@
 
 ## delete all users that have no orders. Should delete 17 (or 18 if you haven't deleted the record added) records.
 
--
+- DELETE FROM Customers
+    WHERE CustomerID IN (SELECT c.CustomerID
+    FROM Customers AS c
+    LEFT JOIN Orders AS o
+    ON c.CustomerID=o.CustomerID
+    WHERE o.OrderID IS NULL)
